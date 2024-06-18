@@ -1,15 +1,16 @@
 import React, { useEffect } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import TodoListItem from "./TodoListItem";
+import AsyncStorageNative from "@react-native-async-storage/async-storage/src/AsyncStorage.native";
 import {
   addStoreTodo,
   deleteTodo,
   setEditingTodo,
   toggleTodo,
 } from "../../redux/actions";
+
+import TodoListItem from "./TodoListItem";
 import { ListContainer } from "./TodoListStyle";
-import AsyncStorageNative from "@react-native-async-storage/async-storage/src/AsyncStorage.native";
 
 const TodoList = ({
   todos,

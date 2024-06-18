@@ -6,6 +6,7 @@ import {
   UPDATE_TODO,
 } from "../actions";
 import AsyncStorageNative from "@react-native-async-storage/async-storage/src/AsyncStorage.native";
+
 const todoListReducer = (state = [], action) => {
   let nextId = Math.floor(Date.now() * Math.random()).toString(36);
 
