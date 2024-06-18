@@ -1,10 +1,11 @@
 import React, { Component } from "react";
 import { Dimensions } from "react-native";
-import TodoForm from "./components/form/TodoForm";
 import { Provider } from "react-redux";
+import { LinearGradient } from "expo-linear-gradient";
+
+import TodoForm from "./components/form/TodoForm";
 import TodoList from "./components/list/TodoList";
 import { store } from "./redux/store/store";
-import { LinearGradient } from "expo-linear-gradient";
 import { Container, FinalBar } from "./TodoAppStyle";
 
 const { width } = Dimensions.get("window");

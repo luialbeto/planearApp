@@ -1,13 +1,14 @@
+import React from "react";
 import { StyleSheet, View } from "react-native";
-
 import TodoApp from "../src/TodoApp";
+import WeatherComponent from "../src/components/WeatherComponent.jsx";
 
 export default function Page() {
   return (
     <View style={styles.container}>
       <View style={styles.main}>
         <TodoApp />
-
+        <WeatherComponent />
       </View>
     </View>
   );
