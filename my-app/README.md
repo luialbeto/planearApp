@@ -18,6 +18,10 @@ Semantic HTML5 markup
 Styled-Components
 Redux
 
+# In-Progress
+- Login/Logout - User/Admin
+- Animations
+
 This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
 
 ## Get started
