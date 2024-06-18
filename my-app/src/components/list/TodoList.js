@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import AsyncStorageNative from "@react-native-async-storage/async-storage/src/AsyncStorage.native";
+import AsyncStorage from "@react-native-community/async-storage";
 import {
   addStoreTodo,
   deleteTodo,
@@ -21,7 +21,7 @@ const TodoList = ({
 }) => {
   useEffect(() => {
     const fetchTodos = async () => {
-      const totalParse = await AsyncStorageNative.getItem("todos");
+      const totalParse = await AsyncStorage.getItem("todos");
       const total = JSON.parse(totalParse);
       if (total) {
         dispatchAddTodo(total);

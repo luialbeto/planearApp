@@ -5,7 +5,8 @@ import {
   TOGGLE_TODO,
   UPDATE_TODO,
 } from "../actions";
-import AsyncStorageNative from "@react-native-async-storage/async-storage/src/AsyncStorage.native";
+import AsyncStorage from '@react-native-community/async-storage';
+
 
 const todoListReducer = (state = [], action) => {
   let nextId = Math.floor(Date.now() * Math.random()).toString(36);
@@ -19,7 +20,7 @@ const todoListReducer = (state = [], action) => {
           done: false,
           edit: false,
         };
-        AsyncStorageNative.setItem(
+        AsyncStorage.setItem(
           "todos",
           JSON.stringify([...state, newTodo])
         );
@@ -40,7 +41,7 @@ const todoListReducer = (state = [], action) => {
           }
           return todo;
         });
-        AsyncStorageNative.setItem("todos", JSON.stringify(editTodo));
+        AsyncStorage.setItem("todos", JSON.stringify(editTodo));
         return editTodo;
       } catch (e) {
         console.log(e);
@@ -58,7 +59,7 @@ const todoListReducer = (state = [], action) => {
           }
           return todo;
         });
-        AsyncStorageNative.setItem("todos", JSON.stringify(togle));
+        AsyncStorage.setItem("todos", JSON.stringify(togle));
         return togle;
       } catch (e) {
         console.log(e);
@@ -68,7 +69,7 @@ const todoListReducer = (state = [], action) => {
     case DELETE_TODO:
       try {
         const delTodo = state.filter((todo) => todo.id !== action.todo.id);
-        AsyncStorageNative.setItem("todos", JSON.stringify(delTodo));
+        AsyncStorage.setItem("todos", JSON.stringify(delTodo));
         return delTodo;
       } catch (e) {
         console.log(e);

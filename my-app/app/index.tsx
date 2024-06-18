@@ -6,7 +6,7 @@ export default function Page() {
   return (
     <View style={styles.container}>
       <View style={styles.main}>
-        <TodoApp />npm install @react-native-async-storage/async-storage
+        <TodoApp />
 
       </View>
     </View>
